@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Air Quality Index</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,400italic,300italic,300|Raleway:300,400,600" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/font-awesome.min.css')}}">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/animate.css')}}">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+	<div class="container">
+	<nav class="navbar fixed-top navbar-dark bg-danger">
+		<a class="navbar-brand" href="index.html">AQI</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  		<span class="navbar-toggler-icon"></span>
+	  	</button>
+	  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  		<ul class="navbar-nav mr-auto">
+	  			<li class="nav-item active">
+	  				<a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a> |
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link" href="a.html">Content</a> |
+	      		</li>
+		      	<li class="nav-item">
+		        	<a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact Us</a> |
+		      	</li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		    	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    </form>
+	  	</div>
+	</nav>
+
+	<div id="iAQI" style="float:left;width:80%;padding-top:40px;">
+        <table width="100%" cellspacing="2" cellpadding="10" border="4" class="result_con tablehead">
+         	<thead>
+         		<tr>
+             		<th width="100">City</th>
+             		<th width="116">State</th>
+             		<th width="116">Location</th>
+             		<th width="116">P25</th>
+             		<th width="116">P10</th>
+             		<th width="116">Last Updated</th>
+           		</tr>
+            </thead>
+		  	<tbody>
+          		<tr>
+                	<td>Alandur Bus Depot, Chennai&nbsp;</td>
+                    <td>Tamil Nadu&nbsp;</td>
+                    <td>Alandur Bus Depot, Chennai, Chennai, India&nbsp;</td>
+                    <td>125&nbsp;</td>
+                    <td>NA&nbsp;</td>
+                    <td>2019-12-30 13:00:00&nbsp;</td>
+             	</tr>
+                <tr>
+                    <td>Alipur, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Alipur, Delhi, Delhi, India&nbsp;</td><td>163&nbsp;</td><td>102&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Anand Kala Kshetram, Rajamahendravaram&nbsp;</td><td>Andhra Pradesh&nbsp;</td><td>Anand Kala Kshetram, Rajamahendravaram, India&nbsp;</td><td>171&nbsp;</td><td>106&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Anand Vihar, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Anand Vihar, Delhi, Delhi, India&nbsp;</td><td>104&nbsp;</td><td>104&nbsp;</td><td>2020-01-23 18:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Anand Vihar, Hapur&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Anand Vihar, Hapur, India&nbsp;</td><td>134&nbsp;</td><td>104&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ardhali Bazar, Varanasi&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Ardhali Bazar, Varanasi, India&nbsp;</td><td>180&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Arya Nagar, Bahadurgarh&nbsp;</td><td>Haryana&nbsp;</td><td>Arya Nagar, Bahadurgarh, India&nbsp;</td><td>999&nbsp;</td><td>58&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Asansol Court Area, Asansol&nbsp;</td><td>West Bengal&nbsp;</td><td>Asansol Court Area, Asansol, India&nbsp;</td><td>182&nbsp;</td><td>138&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ashok Nagar, Udaipur&nbsp;</td><td>Rajasthan&nbsp;</td><td>Ashok Nagar, Udaipur, India&nbsp;</td><td>152&nbsp;</td><td>94&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ashok Vihar, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Satyawati College, Delhi, Delhi, India&nbsp;</td><td>162&nbsp;</td><td>103&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Aya Nagar, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>NISE Gwal Pahari, Gurugram, India&nbsp;</td><td>133&nbsp;</td><td>62&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Btm Layout, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>Jayanagar 5th Block, Bengaluru, India&nbsp;</td><td>114&nbsp;</td><td>83&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bwssb Kadabesanahalli, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>BWSSB Kadabesanahalli, Bengaluru, India&nbsp;</td><td>692&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ballygunge, Kolkata&nbsp;</td><td>West Bengal&nbsp;</td><td>Kolkata US Consulate, India (कोलकाता अमेरिकी वाणिज्य दूतावास, India)&nbsp;</td><td>237&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bandhavgar Colony, Satna&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Bandhavgar Colony, Satna, India&nbsp;</td><td>9&nbsp;</td><td>67&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bandra, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Bandra, Mumbai, India&nbsp;</td><td>137&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bapuji Nagar, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>City Railway Station, Bangalore, India&nbsp;</td><td>NA&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bawana, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Pooth Khurd, Bawana, Delhi, Delhi, India&nbsp;</td><td>185&nbsp;</td><td>113&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Belur Math, Howrah&nbsp;</td><td>West Bengal&nbsp;</td><td>Belur Math, Howrah, India&nbsp;</td><td>156&nbsp;</td><td>90&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bhopal Chauraha, Dewas&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Bhopal Chauraha, Dewas, India&nbsp;</td><td>153&nbsp;</td><td>112&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bidhannagar, Kolkata&nbsp;</td><td>West Bengal&nbsp;</td><td>Victoria, Kolkata, India&nbsp;</td><td>187&nbsp;</td><td>142&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Bollaram Industrial Area, Hyderabad&nbsp;</td><td>Telangana&nbsp;</td><td>Bollaram Industrial Area, Hyderabad, India&nbsp;</td><td>152&nbsp;</td><td>90&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Borivali East, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Borivali East, Mumbai, India&nbsp;</td><td>176&nbsp;</td><td>880&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Burari Crossing, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>ITI Jahangirpuri, Delhi, Delhi, India&nbsp;</td><td>142&nbsp;</td><td>105&nbsp;</td><td>2020-01-23 17:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Crri Mathura Road, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>DITE Okhla, Delhi, Delhi, India&nbsp;</td><td>162&nbsp;</td><td>101&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Central University, Hyderabad&nbsp;</td><td>Telangana&nbsp;</td><td>Central University, Hyderabad, India&nbsp;</td><td>109&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Chandrapur, Chandrapur&nbsp;</td><td>Maharashtra&nbsp;</td><td>MIDC Khutala, Chandrapur, India&nbsp;</td><td>157&nbsp;</td><td>80&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Chhoti Gwaltoli, Indore&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Chhoti Gwaltoli, Indore, India&nbsp;</td><td>156&nbsp;</td><td>95&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Chikkaballapur Rural, Chikkaballapur&nbsp;</td><td>Karnataka&nbsp;</td><td>Chikkaballapur Rural, Chikkaballapur, India&nbsp;</td><td>87&nbsp;</td><td>48&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>City Railway Station, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>City Railway Station, Bangalore, India&nbsp;</td><td>NA&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Civil Line, Jalandhar&nbsp;</td><td>Punjab&nbsp;</td><td>Civil Line, Jalandhar, India&nbsp;</td><td>158&nbsp;</td><td>83&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Civil Lines, Ajmer&nbsp;</td><td>Rajasthan&nbsp;</td><td>Civil Lines, Ajmer, India&nbsp;</td><td>161&nbsp;</td><td>101&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Colaba, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Colaba, Mumbai, India&nbsp;</td><td>167&nbsp;</td><td>86&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Collector Office, Yadgir&nbsp;</td><td>Karnataka&nbsp;</td><td>Collector Office, Yadgir, India&nbsp;</td><td>122&nbsp;</td><td>63&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Collectorate, Gaya&nbsp;</td><td>Bihar&nbsp;</td><td>Collectorate, Gaya, India&nbsp;</td><td>168&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Collectorate, Jodhpur&nbsp;</td><td>Rajasthan&nbsp;</td><td>Collectorate, Jodhpur, India&nbsp;</td><td>151&nbsp;</td><td>95&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Dtu, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Shaheed Sukhdev College of Business Studies, Rohini, Delhi, Delhi, India&nbsp;</td><td>194&nbsp;</td><td>126&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Dr. Karni Singh Shooting Range, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Dr. Karni Singh Shooting Range, Delhi, Delhi, India&nbsp;</td><td>164&nbsp;</td><td>101&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Dwarka-sector 8, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>National Institute of Malaria Research, Sector 8, Dwarka, Delhi, Delhi, India&nbsp;</td><td>162&nbsp;</td><td>145&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Fort William, Kolkata&nbsp;</td><td>West Bengal&nbsp;</td><td>Fort William, Kolkata, India&nbsp;</td><td>196&nbsp;</td><td>149&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gidc, Ankleshwar&nbsp;</td><td>Gujarat&nbsp;</td><td>GIDC, Ankleshwar, India&nbsp;</td><td>130&nbsp;</td><td>70&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gm Office, Brajrajnagar&nbsp;</td><td>Odisha&nbsp;</td><td>GM Office, Brajrajnagar, India&nbsp;</td><td>151&nbsp;</td><td>86&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gvm Corporation, Visakhapatnam&nbsp;</td><td>Andhra Pradesh&nbsp;</td><td>GVM Corporation, Visakhapatnam, India&nbsp;</td><td>152&nbsp;</td><td>72&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ganga Nagar, Meerut&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Ganga Nagar, Meerut, India&nbsp;</td><td>154&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gangapur Road, Nashik&nbsp;</td><td>Maharashtra&nbsp;</td><td>Gangapur Road, Nashik, India&nbsp;</td><td>140&nbsp;</td><td>89&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>General Hospital, Mandikhera&nbsp;</td><td>Haryana&nbsp;</td><td>General Hospital, Mandikhera, India&nbsp;</td><td>100&nbsp;</td><td>70&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ghusuri, Howrah&nbsp;</td><td>West Bengal&nbsp;</td><td>Ghusuri, Howrah, India&nbsp;</td><td>192&nbsp;</td><td>162&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gobind Pura, Yamuna Nagar&nbsp;</td><td>Haryana&nbsp;</td><td>Gobind Pura, Yamuna Nagar, India&nbsp;</td><td>74&nbsp;</td><td>54&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Golden Temple, Amritsar&nbsp;</td><td>Punjab&nbsp;</td><td>Golden Temple, Amritsar, India&nbsp;</td><td>118&nbsp;</td><td>64&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gole Bazar, Katni&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Gole Bazar, Katni, India&nbsp;</td><td>83&nbsp;</td><td>73&nbsp;</td><td>2020-01-23 17:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Gomti Nagar, Lucknow&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Gomti Nagar, Lucknow, India&nbsp;</td><td>154&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>H.b. Colony, Bhiwani&nbsp;</td><td>Haryana&nbsp;</td><td>H.B. Colony, Bhiwani, India&nbsp;</td><td>132&nbsp;</td><td>83&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Haldia, Haldia&nbsp;</td><td>West Bengal&nbsp;</td><td>Haldia, Haldia, India&nbsp;</td><td>NA&nbsp;</td><td>107&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Hardev Nagar, Bathinda&nbsp;</td><td>Punjab&nbsp;</td><td>Hardev Nagar, Bathinda, India&nbsp;</td><td>117&nbsp;</td><td>78&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Hebbal 1st Stage, Mysuru&nbsp;</td><td>Karnataka&nbsp;</td><td>Hebbal 1st Stage, Mysuru, India&nbsp;</td><td>98&nbsp;</td><td>42&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Hebbal, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>Hebbal, Bengaluru, India&nbsp;</td><td>119&nbsp;</td><td>74&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Hombegowda Nagar, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>Hombegowda Nagar, Bengaluru, India&nbsp;</td><td>127&nbsp;</td><td>83&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Huda Sector, Fatehabad&nbsp;</td><td>Haryana&nbsp;</td><td>Huda Sector, Fatehabad, India&nbsp;</td><td>52&nbsp;</td><td>85&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ida Pashamylaram, Hyderabad&nbsp;</td><td>Telangana&nbsp;</td><td>IDA Pashamylaram, Hyderabad, India&nbsp;</td><td>144&nbsp;</td><td>93&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Igsc Planetarium Complex, Patna&nbsp;</td><td>Bihar&nbsp;</td><td>IGSC Planetarium Complex, Patna, India&nbsp;</td><td>188&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ihbas Dilshad Garden, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>ITI Shahdra, Jhilmil Industrial Area, Delhi, Delhi, India&nbsp;</td><td>175&nbsp;</td><td>117&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ito, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Major Dhyan Chand National Stadium, Delhi, Delhi, India&nbsp;</td><td>144&nbsp;</td><td>76&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Indira Colony Vistar, Pali&nbsp;</td><td>Rajasthan&nbsp;</td><td>Indira Colony Vistar, Pali, India&nbsp;</td><td>141&nbsp;</td><td>70&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Indirapuram, Ghaziabad&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Indirapuram, Ghaziabad, India&nbsp;</td><td>168&nbsp;</td><td>104&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Jadavpur, Kolkata&nbsp;</td><td>West Bengal&nbsp;</td><td>Jadavpur, Kolkata, India&nbsp;</td><td>183&nbsp;</td><td>125&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Jahangirpuri, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>ITI Jahangirpuri, Delhi, Delhi, India&nbsp;</td><td>142&nbsp;</td><td>105&nbsp;</td><td>2020-01-23 17:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Jai Bhim Nagar, Meerut&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Jai Bhim Nagar, Meerut, India&nbsp;</td><td>122&nbsp;</td><td>107&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Jawaharlal Nehru Stadium, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Jawaharlal Nehru Stadium, Delhi, Delhi, India&nbsp;</td><td>156&nbsp;</td><td>92&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Jayanagar 5th Block, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>Jayanagar 5th Block, Bengaluru, India&nbsp;</td><td>114&nbsp;</td><td>83&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Kalal Majra, Khanna&nbsp;</td><td>Punjab&nbsp;</td><td>Kalal Majra, Khanna, India&nbsp;</td><td>107&nbsp;</td><td>61&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Karve Road, Pune&nbsp;</td><td>Maharashtra&nbsp;</td><td>Pashan, Pune, Pune, India&nbsp;</td><td>67&nbsp;</td><td>67&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Khadakpada, Kalyan&nbsp;</td><td>Maharashtra&nbsp;</td><td>Khadakpada, Kalyan, India&nbsp;</td><td>160&nbsp;</td><td>155&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Knowledge Park - Iii, Greater Noida&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Knowledge Park - III, Greater Noida, India&nbsp;</td><td>153&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Knowledge Park - V, Greater Noida&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Knowledge Park - V, Greater Noida, India&nbsp;</td><td>164&nbsp;</td><td>123&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Kurla, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Kurla, Mumbai, India&nbsp;</td><td>172&nbsp;</td><td>138&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Lajpat Nagar, Moradabad&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Lajpat Nagar, Moradabad, India&nbsp;</td><td>157&nbsp;</td><td>99&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Lal Bahadur Shastri Nagar, Kalaburagi&nbsp;</td><td>Karnataka&nbsp;</td><td>Lal Bahadur Shastri Nagar, Kalaburagi, India&nbsp;</td><td>144&nbsp;</td><td>126&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Lalbagh, Lucknow&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Lalbagh, West Lucknow, Lucknow, India&nbsp;</td><td>192&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Lodhi Road, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Jawaharlal Nehru Stadium, Delhi, Delhi, India&nbsp;</td><td>156&nbsp;</td><td>92&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Loni, Ghaziabad&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Loni, Ghaziabad, India&nbsp;</td><td>183&nbsp;</td><td>140&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Md University, Rohtak&nbsp;</td><td>Haryana&nbsp;</td><td>Arya Nagar, Bahadurgarh, India&nbsp;</td><td>999&nbsp;</td><td>58&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Midc Khutala, Chandrapur&nbsp;</td><td>Maharashtra&nbsp;</td><td>MIDC Khutala, Chandrapur, India&nbsp;</td><td>157&nbsp;</td><td>80&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Mahakaleshwar Temple, Ujjain&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Mahakaleshwar Temple, Ujjain, India&nbsp;</td><td>167&nbsp;</td><td>110&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Mahape, Navi Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Mahape, Navi Mumbai, India&nbsp;</td><td>162&nbsp;</td><td>103&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Major Dhyan Chand National Stadium, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Major Dhyan Chand National Stadium, Delhi, Delhi, India&nbsp;</td><td>144&nbsp;</td><td>76&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Manali Village, Chennai&nbsp;</td><td>Tamil Nadu&nbsp;</td><td>Manali, Chennai, Chennai, India&nbsp;</td><td>180&nbsp;</td><td>67&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Manali, Chennai&nbsp;</td><td>Tamil Nadu&nbsp;</td><td>Manali, Chennai, Chennai, India&nbsp;</td><td>180&nbsp;</td><td>67&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Mandir Marg, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Mandir Marg, Delhi, Delhi, India&nbsp;</td><td>159&nbsp;</td><td>78&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Maninagar, Ahmedabad&nbsp;</td><td>Gujarat&nbsp;</td><td>Maninagar, Ahmedabad, India&nbsp;</td><td>98&nbsp;</td><td>78&nbsp;</td><td>2020-01-23 15:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Marhatal, Jabalpur&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Marhatal, Jabalpur, India&nbsp;</td><td>153&nbsp;</td><td>109&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Model Town, Patiala&nbsp;</td><td>Punjab&nbsp;</td><td>Model Town, Patiala, India&nbsp;</td><td>103&nbsp;</td><td>63&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>More Chowk Waluj, Aurangabad&nbsp;</td><td>Maharashtra&nbsp;</td><td>More Chowk, Waluj, Aurangabad, India&nbsp;</td><td>152&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Moti Doongri, Alwar&nbsp;</td><td>Rajasthan&nbsp;</td><td>Moti Doongri, Alwar, India&nbsp;</td><td>114&nbsp;</td><td>60&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Mundka, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Mundka, Delhi, Delhi, India&nbsp;</td><td>191&nbsp;</td><td>128&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Municipal Corporation Office, Dharuhera&nbsp;</td><td>Haryana&nbsp;</td><td>Municipal Corporation Office, Dharuhera, India&nbsp;</td><td>138&nbsp;</td><td>99&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Murthal, Sonipat&nbsp;</td><td>Haryana&nbsp;</td><td>Murthal, Sonipat, India&nbsp;</td><td>62&nbsp;</td><td>62&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Muzaffarpur Collectorate, Muzaffarpur&nbsp;</td><td>Bihar&nbsp;</td><td>Muzaffarpur Collectorate, Muzaffarpur, India&nbsp;</td><td>182&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 18:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Nise Gwal Pahari, Gurugram&nbsp;</td><td>Haryana&nbsp;</td><td>NISE Gwal Pahari, Gurugram, India&nbsp;</td><td>133&nbsp;</td><td>62&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Nsit Dwarka, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>National Institute of Malaria Research, Sector 8, Dwarka, Delhi, Delhi, India&nbsp;</td><td>162&nbsp;</td><td>145&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Najafgarh, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Bramprakash Ayurvedic Hospital, Najafgarh, Delhi, Delhi, India&nbsp;</td><td>114&nbsp;</td><td>55&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Narela, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Narela, Delhi, Delhi, India&nbsp;</td><td>180&nbsp;</td><td>121&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Nathu Colony, Ballabgarh&nbsp;</td><td>Haryana&nbsp;</td><td>Nathu Colony, Ballabgarh, India&nbsp;</td><td>195&nbsp;</td><td>175&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Nehru Nagar, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>PGDAV College, Sriniwaspuri, Delhi, Delhi, India&nbsp;</td><td>225&nbsp;</td><td>139&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Nehru Nagar, Kanpur&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Nehru Nagar, Kanpur, India&nbsp;</td><td>152&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Nerul, Navi Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Mahape, Navi Mumbai, India&nbsp;</td><td>162&nbsp;</td><td>103&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>New Collectorate, Baghpat&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Murthal, Sonipat, India&nbsp;</td><td>62&nbsp;</td><td>62&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>North Campus - Du, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Pusa, Delhi, Delhi, India&nbsp;</td><td>173&nbsp;</td><td>117&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Okhla Phase-2, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>DITE Okhla, Delhi, Delhi, India&nbsp;</td><td>162&nbsp;</td><td>101&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Opp Gpo Civil Lines, Nagpur&nbsp;</td><td>Maharashtra&nbsp;</td><td>Opp GPO Civil Lines, Nagpur, India&nbsp;</td><td>514&nbsp;</td><td>78&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Padmapukur, Howrah&nbsp;</td><td>West Bengal&nbsp;</td><td>Padmapukur, Howrah, India&nbsp;</td><td>198&nbsp;</td><td>119&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Pallavpuram Phase 2, Meerut&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Pallavpuram Phase 2, Meerut, India&nbsp;</td><td>183&nbsp;</td><td>129&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Patparganj, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Mother Dairy Plant, Parparganj, Delhi, Delhi, India&nbsp;</td><td>152&nbsp;</td><td>86&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Patti Mehar, Ambala&nbsp;</td><td>Haryana&nbsp;</td><td>Patti Mehar, Ambala, India&nbsp;</td><td>96&nbsp;</td><td>72&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Peenya, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>Peenya, Bangalore, India&nbsp;</td><td>150&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Phase-1 Gidc, Vapi&nbsp;</td><td>Gujarat&nbsp;</td><td>Phase-1 GIDC, Vapi, India&nbsp;</td><td>174&nbsp;</td><td>118&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Phase-4 Gidc, Vatva&nbsp;</td><td>Gujarat&nbsp;</td><td>Phase-4 GIDC, Vatva, India&nbsp;</td><td>161&nbsp;</td><td>128&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Pimpleshwar Mandir, Thane&nbsp;</td><td>Maharashtra&nbsp;</td><td>NMMC Airoli, Mumbai, India&nbsp;</td><td>NA&nbsp;</td><td>37&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Plammoodu, Thiruvananthapuram&nbsp;</td><td>Kerala&nbsp;</td><td>Plammoodu, Thiruvananthapuram, India&nbsp;</td><td>95&nbsp;</td><td>57&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Police Commissionerate, Jaipur&nbsp;</td><td>Rajasthan&nbsp;</td><td>Police Commissionerate, Jaipur, India&nbsp;</td><td>59&nbsp;</td><td>26&nbsp;</td><td>2020-01-23 17:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Police Lines, Jind&nbsp;</td><td>Haryana&nbsp;</td><td>Police Lines, Jind, India&nbsp;</td><td>130&nbsp;</td><td>71&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Powai, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Powai, Mumbai, India&nbsp;</td><td>160&nbsp;</td><td>97&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Punjab Agricultural University, Ludhiana&nbsp;</td><td>Punjab&nbsp;</td><td>Punjab Agricultural University, Ludhiana, India&nbsp;</td><td>93&nbsp;</td><td>61&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Punjabi Bagh, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Punjabi Bagh, Delhi, Delhi, India&nbsp;</td><td>157&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Pusa, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Pusa, Delhi, Delhi, India&nbsp;</td><td>173&nbsp;</td><td>117&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Pusa, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Pusa, Delhi, Delhi, India&nbsp;</td><td>173&nbsp;</td><td>117&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>R K Puram, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>R.K. Puram, Delhi, Delhi, India&nbsp;</td><td>157&nbsp;</td><td>110&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Riico Ind. Area Iii, Bhiwadi&nbsp;</td><td>Rajasthan&nbsp;</td><td>RIICO Ind. Area III, Bhiwadi, India&nbsp;</td><td>185&nbsp;</td><td>178&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Rimt University, Mandi Gobindgarh&nbsp;</td><td>Punjab&nbsp;</td><td>RIMT University, Mandi Gobindgarh, India&nbsp;</td><td>193&nbsp;</td><td>167&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Rabindra Sarobar, Kolkata&nbsp;</td><td>West Bengal&nbsp;</td><td>Rabindra Sarobar, Kolkata, India&nbsp;</td><td>175&nbsp;</td><td>117&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Railway Colony, Guwahati&nbsp;</td><td>Assam&nbsp;</td><td>Railway Colony, Guwahati, India&nbsp;</td><td>300&nbsp;</td><td>220&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Rishi Nagar, Kaithal&nbsp;</td><td>Haryana&nbsp;</td><td>Sector-7, Kurukshetra, India&nbsp;</td><td>98&nbsp;</td><td>67&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Rohini, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Shaheed Sukhdev College of Business Studies, Rohini, Delhi, Delhi, India&nbsp;</td><td>194&nbsp;</td><td>126&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sahilara, Maihar&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Sahilara, Maihar, India&nbsp;</td><td>31&nbsp;</td><td>12&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sanathnagar, Hyderabad&nbsp;</td><td>Telangana&nbsp;</td><td>Sanathnagar, Hyderabad, India&nbsp;</td><td>158&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sanegurava Halli, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>SaneguravaHalli, Bangalore, India&nbsp;</td><td>NA&nbsp;</td><td>31&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sanjay Nagar, Ghaziabad&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Sanjay Nagar, Ghaziabad, India&nbsp;</td><td>185&nbsp;</td><td>123&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sanjay Palace, Agra&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Sanjay Palace, Agra, India&nbsp;</td><td>147&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Secretariat, Amaravati&nbsp;</td><td>Andhra Pradesh&nbsp;</td><td>Secretariat, Amaravati, India&nbsp;</td><td>139&nbsp;</td><td>86&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector - 125, Noida&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Sector - 125, Noida, India&nbsp;</td><td>155&nbsp;</td><td>94&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector - 62, Noida&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Sector - 62, Noida, India&nbsp;</td><td>161&nbsp;</td><td>118&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector- 16a, Faridabad&nbsp;</td><td>Haryana&nbsp;</td><td>Sector16A Faridabad, Faridabad, India&nbsp;</td><td>163&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-1, Noida&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Sector-1, Noida, India&nbsp;</td><td>170&nbsp;</td><td>196&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-10, Gandhinagar&nbsp;</td><td>Gujarat&nbsp;</td><td>Sector-10, Gandhinagar, India&nbsp;</td><td>92&nbsp;</td><td>53&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-116, Noida&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Sector-116, Noida, India&nbsp;</td><td>162&nbsp;</td><td>91&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-12, Karnal&nbsp;</td><td>Haryana&nbsp;</td><td>Sector-12, Karnal, India&nbsp;</td><td>131&nbsp;</td><td>92&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-18, Panipat&nbsp;</td><td>Haryana&nbsp;</td><td>Sector-18, Panipat, India&nbsp;</td><td>98&nbsp;</td><td>92&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-2 Imt, Manesar&nbsp;</td><td>Haryana&nbsp;</td><td>Sector-2 IMT, Manesar, India&nbsp;</td><td>104&nbsp;</td><td>71&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-2 Industrial Area, Pithampur&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Sector-2 Industrial Area, Pithampur, India&nbsp;</td><td>137&nbsp;</td><td>80&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-25, Chandigarh&nbsp;</td><td>Chandigarh&nbsp;</td><td>Sector-25, Chandigarh, India&nbsp;</td><td>144&nbsp;</td><td>61&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-6, Panchkula&nbsp;</td><td>Haryana&nbsp;</td><td>Sector 6 Panchkula, Panchkula, India&nbsp;</td><td>152&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-7, Kurukshetra&nbsp;</td><td>Haryana&nbsp;</td><td>Sector-7, Kurukshetra, India&nbsp;</td><td>98&nbsp;</td><td>67&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sector-d Industrial Area, Mandideep&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Sector-D Industrial Area, Mandideep, India&nbsp;</td><td>68&nbsp;</td><td>51&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Shadipur, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Punjabi Bagh, Delhi, Delhi, India&nbsp;</td><td>157&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 19:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Shasthri Nagar, Ratlam&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>Shasthri Nagar, Ratlam, India&nbsp;</td><td>126&nbsp;</td><td>93&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Shastri Nagar, Jaipur&nbsp;</td><td>Rajasthan&nbsp;</td><td>Shastri Nagar, Jaipur, India&nbsp;</td><td>132&nbsp;</td><td>78&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Shastri Nagar, Narnaul&nbsp;</td><td>Haryana&nbsp;</td><td>Shastri Nagar, Narnaul, India&nbsp;</td><td>86&nbsp;</td><td>45&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Shrinath Puram, Kota&nbsp;</td><td>Rajasthan&nbsp;</td><td>Shrinath Puram, Kota, India&nbsp;</td><td>136&nbsp;</td><td>81&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Shyam Nagar, Palwal&nbsp;</td><td>Haryana&nbsp;</td><td>Shyam Nagar, Palwal, India&nbsp;</td><td>110&nbsp;</td><td>71&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Silk Board, Bengaluru&nbsp;</td><td>Karnataka&nbsp;</td><td>Silk Board, Bengaluru, India&nbsp;</td><td>180&nbsp;</td><td>145&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sion, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Sion, Mumbai, India&nbsp;</td><td>165&nbsp;</td><td>137&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sirifort, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Sri Auribindo Marg, Delhi, Delhi, India&nbsp;</td><td>160&nbsp;</td><td>76&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Solapur, Solapur&nbsp;</td><td>Maharashtra&nbsp;</td><td>Solapur, Solapur, India&nbsp;</td><td>178&nbsp;</td><td>296&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sonia Vihar, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Sonia Vihar Water Treatment Plant DJB, Delhi, Delhi, India&nbsp;</td><td>163&nbsp;</td><td>95&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sri Aurobindo Marg, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Sri Auribindo Marg, Delhi, Delhi, India&nbsp;</td><td>160&nbsp;</td><td>76&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>T T Nagar, Bhopal&nbsp;</td><td>Madhya Pradesh&nbsp;</td><td>T T Nagar, Bhopal, India&nbsp;</td><td>168&nbsp;</td><td>102&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Talcher Coalfields, Talcher&nbsp;</td><td>Odisha&nbsp;</td><td>GM Office, Brajrajnagar, India&nbsp;</td><td>151&nbsp;</td><td>86&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Talkatora District Industries Center, Lucknow&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Talkatora, Lucknow, India&nbsp;</td><td>169&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Tata Stadium, Jorapokhar&nbsp;</td><td>Jharkhand&nbsp;</td><td>Tata Stadium, Jorapokhar, India&nbsp;</td><td>153&nbsp;</td><td>131&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Tirumala, Tirupati&nbsp;</td><td>Andhra Pradesh&nbsp;</td><td>Tirumala-APPCB, Tirupati, India&nbsp;</td><td>137&nbsp;</td><td>60&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Udyogamandal, Eloor&nbsp;</td><td>Kerala&nbsp;</td><td>Udyogamandal, Eloor, India&nbsp;</td><td>44&nbsp;</td><td>84&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Urban Estate-ii, Hisar&nbsp;</td><td>Haryana&nbsp;</td><td>Urban Estate-II, Hisar, India&nbsp;</td><td>125&nbsp;</td><td>71&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vasai West, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Vasai West, Mumbai, India&nbsp;</td><td>168&nbsp;</td><td>108&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vasundhara, Ghaziabad&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Vasundhara, Ghaziabad, India&nbsp;</td><td>177&nbsp;</td><td>129&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Velachery Res. Area, Chennai&nbsp;</td><td>Tamil Nadu&nbsp;</td><td>Velachery Res. Area, Chennai, Chennai, India&nbsp;</td><td>129&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vijay Nagar, Ramanagara&nbsp;</td><td>Karnataka&nbsp;</td><td>Vijay Nagar, Ramanagara, India&nbsp;</td><td>68&nbsp;</td><td>33&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vikas Sadan, Gurugram&nbsp;</td><td>Haryana&nbsp;</td><td>Vikas Sadan Gurgaon, Gurgaon, India&nbsp;</td><td>141&nbsp;</td><td>NA&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vile Parle West, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Vile Parle West, Mumbai, India&nbsp;</td><td>159&nbsp;</td><td>91&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Vivek Vihar, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>ITI Shahdra, Jhilmil Industrial Area, Delhi, Delhi, India&nbsp;</td><td>175&nbsp;</td><td>117&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Ward-32 Bapupara, Siliguri&nbsp;</td><td>West Bengal&nbsp;</td><td>NA&nbsp;</td><td>NA&nbsp;</td><td>NA&nbsp;</td><td>c&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Wazirpur, Delhi&nbsp;</td><td>Delhi&nbsp;</td><td>Delhi Institute of Tool Engineering, Wazirpur, Delhi, Delhi, India&nbsp;</td><td>180&nbsp;</td><td>131&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Worli, Mumbai&nbsp;</td><td>Maharashtra&nbsp;</td><td>Worli, Mumbai, India&nbsp;</td><td>183&nbsp;</td><td>107&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Yamunapuram, Bulandshahr&nbsp;</td><td>Uttar Pradesh&nbsp;</td><td>Yamunapuram, Bulandshahr, India&nbsp;</td><td>164&nbsp;</td><td>125&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Zoo Park, Hyderabad&nbsp;</td><td>Telangana&nbsp;</td><td>Zoo Park, Bahadurpura West, Hyderabad, India&nbsp;</td><td>163&nbsp;</td><td>107&nbsp;</td><td>2020-01-23 20:00:00&nbsp;</td>
+                </tr>
+			</tbody>
+        </table>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row bort">
+
+        <div class="copyright">
+          © Copyright by Abhay Kumar. All rights reserved.
+          <!--div class="credits">
+            <--
+              All the links in the footer should remain intact. 
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Maundy
+            >
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div-->
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery.countdown.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/wow.js')}}"></script>
+  <script src="{{url_for('static',filename='js/custom.js')}}"></script>
+  <script src="{{url_for('static',filename='contactform/contactform.js')}}"></script>
+
+
+
+</body>
+</html>
