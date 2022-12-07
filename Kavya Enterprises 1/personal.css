@@ -1,0 +1,149 @@
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: rgb(69, 86, 125);
+    --main-gray: #303841;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+html {
+    box-sizing: border-box;
+}
+  /* 1200px / 16px = 75em */
+  @media (max-width: 75em) {
+    html {
+      font-size: 60%;
+    }
+  }
+  
+  /* 980px / 16px = 61.25em */
+  @media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+    }
+  }
+  
+  /* 460px / 16px = 28.75em */
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 55%;
+    }
+  }
+  
+
+body {
+    margin: 0px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.4;
+    /* padding: 100%;? */
+}
+
+img {
+    display: block;
+    width: 100%;
+  }
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    padding: 8px;
+    align-content:center;
+    justify-content: flex-end;
+    background:var(--main-blue);
+    z-index: 8;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    margin-right: 3.8rem;
+    font-size: x-large;
+    
+}
+
+.nav-link {
+    text-decoration: none;
+    margin: 0.55rem;
+    padding: 0.65rem;
+    color: var(--main-white);
+}
+#navbar a:hover {
+    background: whitesmoke;
+    color: var(--main-blue);
+}
+
+#main-doc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 8px;
+}
+
+section {
+    display: flex;
+    flex-direction: column; 
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: antiquewhite;
+}
+
+#welcome-section {
+    background: linear-gradient(65deg,rgba(10,10,10,0.45), rgba(100,100,100,0.85)),url("./images/portfolio-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#projects {
+    background: -webkit-linear-gradient(100deg,rgba(10,10,10,0.45), rgba(100,100,100,0.35)),url("./images/portfolio-8.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+    border-radius: 2px;
+}
+#projects a{
+    text-decoration: none;
+}
+
+#project-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+}
+#project-items img {
+    display: block;
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#contact {
+    background: -webkit-linear-gradient(100deg,rgba(10,10,10,0.45), rgba(100,100,100,0.35)),url("./images/portfolio-9.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    color: antiquewhite;
+    background: #666;
+    padding: 1.025rem;
+    text-align: center;
+}

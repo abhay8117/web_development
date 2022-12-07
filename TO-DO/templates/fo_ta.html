@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container my-4">
+    <h1>Add Todo</h1>
+    <form action="/"  method="POST">
+        <div class="mb-3">
+            <label for="todo" class="form-label">ToDo</label>
+            <input type="text" class="form-control" id="todo" aria-describedby="Todo">
+
+        </div>
+        <div class="mb-3">
+            <label for="des" class="form-label">Description</label>
+            <input type="text" class="form-control" id="des">
+        </div>
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+    </form>
+    <div class="container my-3">
+
+        {% if allTodo | length==0 %}
+            <div class="alert alert-dark">
+
+                No Todo
+            </div>
+        {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">S.No.</th>
+                    <th scope="col">Todo</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    
+                {% for table in allTodo %}
+                
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{table.title1}}</td>
+                    <td>{{table.des}}</td>
+                    <td>{{table.date_c}}</td>
+                    <td>
+                        <a href="/delete/{{table.sno}}" type="button" class="btn btn-outline-danger btn-sm mx-2" role="button">Delete</a>
+                        <a href="/update/{{table.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-2" role="button">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

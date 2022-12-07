@@ -1,0 +1,89 @@
+/* Breakpoints */
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... } */
+
+/* // `xs` returns only a ruleset and no media query
+// ... { ... }
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { ... }
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { ... }
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { ... }
+
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { ... } */
+
+
+.row{
+    /* border: 1px solid black; */
+    justify-content: center;
+}
+
+/* .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{
+    border: 1px solid black;
+     padding: 50px;
+} */
+
+
+.carousel {
+    margin-top: 2px;
+}
+
+main {
+  padding-top: 15px;
+}
+
+.services {
+  /* background-color: #e99e96; */
+  color: #1e79f1;
+  font-size: 30pt;
+  font-family: sans-serif;
+  text-align: center;
+  border-bottom: thick double #cc53a4;;
+  
+}
+
+.card-group {
+  display: inline-flex;
+  margin: 10px;
+  padding: 25px;
+  width: 20rem;
+}
+
+.card-img-top {
+  width: 95%;
+  height: 95%;
+}
+
+.heading {
+  top: 20px;
+  text-align: center;
+  color: #fff000;
+  background:linear-gradient(90deg,#80ffd4,hsl(160,100%,30%));
+  padding-bottom: 6px;
+  text-decoration: dashed solid #cc53a4 5px;
+ 
+}
+/* 01234567 | 89abcdef  */
